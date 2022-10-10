@@ -1,0 +1,118 @@
+import java.util.Arrays;
+
+class Employee {
+
+    private String name;
+    private int hours;
+    private double rate;
+    Address [] add;
+
+    public Employee(String name,int hours, double rate, Address[] address ) {
+        this.name = name;
+        this.hours = hours;
+        this.rate = rate;
+        this.add = address;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getHours() {
+        return hours;
+    }
+
+    public void setHours(int hours) {
+        this.hours = hours;
+    }
+
+    public double getRate() {
+        return rate;
+    }
+
+    public void setRate(double rate) {
+        this.rate = rate;
+    }
+
+    public Address[] getAdd() {
+        return add;
+    }
+
+    public void setAdd(Address[] add) {
+        this.add = add;
+    }
+
+    @Override
+    public String toString() {
+        return "Name = " + name + "\n" + "Hours = " + hours + "\n" + "Rate = " + rate + "\n" + "\n" + Arrays.toString(add);
+    }
+
+}
+class Address {
+
+    String street;
+    String postal;
+    int number;
+
+
+    public Address(String streetname, int number, String postal) {
+        this.street = streetname;
+        this.postal = postal;
+        this.number = number;
+
+
+
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public String getPostal() {
+        return postal;
+    }
+
+    public void setPostal(String postal) {
+        this.postal = postal;
+    }
+
+    @Override
+    public String toString() {
+        return "Street = " + street + "\n"  + " number = " + number + "\n" + " postal = " + postal + "\n";
+    }
+
+}
+
+class Test {
+
+    public static void main(String[] args) {
+
+        Address a1 = new Address("Queen", 48, "KINPIN2");
+        Address a2 = new Address("King Edward", 800, "KIN6N5");
+        Address [] add = new Address[5];
+        add[0] = a1;
+        add[1] = a2;
+
+        Employee e1 = new Employee("Falcao", 40, 15.50, add);
+
+        System.out.println(e1.toString());
+
+    }
+
+}
